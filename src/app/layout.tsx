@@ -6,22 +6,22 @@ import './globals.css'
 export const codecPro = localFont({
   src: [
     {
-      path: '../fonts/CodecPro-Light.woff2',
+      path: '../assets/fonts/CodecPro-Light.woff2',
       weight: '200',
       style: 'normal'
     },
     {
-      path: '../fonts/CodecPro-News.woff2',
+      path: '../assets/fonts/CodecPro-News.woff2',
       weight: '300',
       style: 'normal'
     },
     {
-      path: '../fonts/CodecPro-Bold.woff2',
+      path: '../assets/fonts/CodecPro-Bold.woff2',
       weight: '500',
       style: 'normal'
     },
     {
-      path: '../fonts/CodecPro-ExtraBold.woff2',
+      path: '../assets/fonts/CodecPro-ExtraBold.woff2',
       weight: '600',
       style: 'normal'
     }
