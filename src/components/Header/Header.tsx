@@ -26,7 +26,7 @@ export function Header() {
           />
         </button>
         <div className="mt-3 flex flex-col">
-          <h1 className="lg:text-3xl mb-[14px] text-xl font-semibold lg:mb-5">
+          <h1 className="mb-[14px] text-xl font-semibold lg:mb-5 lg:text-3xl">
             Join VerifyMyAge
           </h1>
           <p className="pr-4 text-md font-extralight lg:text-xl">
