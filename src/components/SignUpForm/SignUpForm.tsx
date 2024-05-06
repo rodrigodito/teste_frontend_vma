@@ -4,6 +4,8 @@ import { useState } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 
 import { Input } from '@/components/Input'
+import { SignUpDto } from '@/domain/dto/save-sign-up-dto'
+import { makeSaveSignUpFactory } from '@/factories/save-sign-up-factory'
 import { SignUpFormSchema } from '@/schemas/SignUpForm'
 import { yupResolver } from '@hookform/resolvers/yup'
 
@@ -13,7 +15,6 @@ import { CountryAreaDataSelect } from '../CountryPhoneSelect/CountryPhoneSelect.
 import { SecuredBy } from '../SecuredBy'
 import { FormFooter } from './FormFooter'
 import { PolicyTerms } from './PolicyTerms'
-import { SignUpFormData } from './SignUpForm.types'
 
 export function SignUpForm() {
   const defaultCountryAreaSelect = countries.find(
@@ -29,7 +30,7 @@ export function SignUpForm() {
     setError,
     clearErrors,
     formState: { errors }
-  } = useForm<SignUpFormData>({
+  } = useForm<SignUpDto>({
     resolver: yupResolver(SignUpFormSchema)
   })
 
@@ -40,16 +41,14 @@ export function SignUpForm() {
     setIsPolicyTermChecked(checked)
   }
 
-  async function onSubmit(data: SignUpFormData) {
+  async function onSubmit(data: SignUpDto) {
     if (!isPolicyTermChecked) {
       setError('policyTerms', { message: 'policyTerms is a required field' })
       return
     }
 
     try {
-      await fetch('/api/sign-up', {
-        method: 'post'
-      })
+      await makeSaveSignUpFactory().save(data)
 
       window.location.href = '/success'
     } catch (error) {
