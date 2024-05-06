@@ -1,8 +1,8 @@
 'use client'
-import { use, useState } from 'react'
+
+import { useState } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 
-import { Checkbox } from '@/components/Checkbox'
 import { Input } from '@/components/Input'
 import { SignUpFormSchema } from '@/schemas/SignUpForm'
 import { yupResolver } from '@hookform/resolvers/yup'
@@ -40,13 +40,21 @@ export function SignUpForm() {
     setIsPolicyTermChecked(checked)
   }
 
-  function onSubmit(data: SignUpFormData) {
+  async function onSubmit(data: SignUpFormData) {
     if (!isPolicyTermChecked) {
       setError('policyTerms', { message: 'policyTerms is a required field' })
       return
     }
 
-    console.log('data', data)
+    try {
+      await fetch('/api/sign-up', {
+        method: 'post'
+      })
+
+      window.location.href = '/success'
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   return (
