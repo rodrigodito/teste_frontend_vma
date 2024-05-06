@@ -16,7 +16,7 @@ npm run dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Storybook
-For documentation UI, I used the Storybook library, to see this documentation just run on terminal
+For UI documentation, I used the Storybook library, to see this documentation just run on terminal
 ```bash
 npm run storybook
 ```
