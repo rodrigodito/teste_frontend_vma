@@ -5,7 +5,7 @@ export async function POST() {
     await new Promise((resolve) => {
       setTimeout(() => {
         resolve('success')
-      }, 500)
+      }, 200)
     })
     return NextResponse.json({
       message: 'success'

@@ -52,7 +52,7 @@ export function CountryPhoneSelect({
             {countries.map((country) => (
               <Select.Item value={country.code} key={country.code}>
                 <Select.ItemText asChild>
-                  <div className="flex gap-2 px-3 py-2">
+                  <div className="flex gap-2 px-3 py-2 hover:cursor-default">
                     <figure className="size-5 overflow-hidden rounded-full">
                       <Image
                         src={country.image}
@@ -65,7 +65,6 @@ export function CountryPhoneSelect({
                     {country.code}
                   </div>
                 </Select.ItemText>
-                <Select.ItemIndicator>…</Select.ItemIndicator>
               </Select.Item>
             ))}
           </Select.Viewport>
