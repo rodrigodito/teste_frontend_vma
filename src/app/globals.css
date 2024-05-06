@@ -8,9 +8,3 @@ body {
   font-size: 14px;
   color: theme(colors.vma.darkGrey)
 }
-
-@layer components {
-  .link {
-    @apply 
-  }
-}

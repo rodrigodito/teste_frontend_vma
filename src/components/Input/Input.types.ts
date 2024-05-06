@@ -1,7 +1,7 @@
 import React from 'react'
 
 export type InputProps = {
-  children?: JSX.Element
+  children?: React.ReactNode
   className?: string
   hasError?: boolean
   label: string

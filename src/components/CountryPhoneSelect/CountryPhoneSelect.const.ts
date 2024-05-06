@@ -1,6 +1,6 @@
-import { CountryDataSelect } from './CountryPhoneSelect.types'
+import { CountryAreaDataSelect } from './CountryPhoneSelect.types'
 
-export const countries: CountryDataSelect[] = [
+export const countries: CountryAreaDataSelect[] = [
   {
     code: '+55',
     name: 'Brazil',

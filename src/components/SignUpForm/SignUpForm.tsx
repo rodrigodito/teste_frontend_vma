@@ -20,7 +20,7 @@ export function SignUpForm() {
     (country) => country.code === '+44'
   )
   const [countryAreaNumber, setCountryAreaNumber] =
-    useState<CountryAreaDataSelect>(defaultCountryAreaSelect)
+    useState<CountryAreaDataSelect>(defaultCountryAreaSelect!)
   const [isPolicyTermChecked, setIsPolicyTermChecked] = useState(false)
 
   const {
