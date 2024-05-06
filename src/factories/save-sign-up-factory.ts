@@ -1,4 +1,4 @@
-import { RemoteSaveSignUp } from '@/data/usecases/remote-save-sign-up'
+import { RemoteSaveSignUp } from '@/data/usecases/sign-up/remote-save-sign-up'
 
 import { makeAxiosHttpClient } from './axios-http-client-factory'
 

@@ -1,5 +1,7 @@
 import { SignUpDto, SignUpResponse } from '@/domain/dto/save-sign-up-dto'
 import { SaveSignUp } from '@/domain/save-sign-up'
+import { NotFoundError } from '@/errors/notFoundError'
+import { UnexpectedError } from '@/errors/unexpectedError'
 import { AxiosHttpClient } from '@/infra/axios-http-client'
 import { HttpClient } from '@/infra/protocols/axios-http-client-protocol'
 
@@ -19,8 +21,10 @@ export class RemoteSaveSignUp implements SaveSignUp {
     switch (httpResponse.statusCode) {
       case HttpClient.StatusCode.ok:
         return httpResponse.body!
+      case HttpClient.StatusCode.notFound:
+        throw new NotFoundError()
       default:
-        throw new Error()
+        throw new UnexpectedError()
     }
   }
 }
